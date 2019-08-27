@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Link ,Switch} from "react-router-dom";
+import {Provider} from 'react-redux';
+import store from './store';
+import Home from './home/index'
+import Result from './result/index'
+import QuestionOne from './question/questionOne/index'
+import QuestionTwo from './question/questionTwo/index';
+import QuestionThree from './question/questionThree/index';
+import QuestionFour from './question/questionFour/index';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='root'>
+      <Provider store={store}>
+      <BrowserRouter>
+          <Switch>
+          <Route path='/' exact component={Home}></Route>
+          <Route exact path='/result' component={Result}></Route>
+          <Route exact path='/questionOne' component={QuestionOne}></Route>
+          <Route exact path='/questionTwo' component={QuestionTwo}></Route>
+          <Route exact path='/questionThree' component={QuestionThree}></Route>
+          <Route exact path='/questionFour' component={QuestionFour}></Route>
+          </Switch>
+      </BrowserRouter>
+      </Provider>
     </div>
   );
 }
