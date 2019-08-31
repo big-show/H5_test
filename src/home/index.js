@@ -19,21 +19,23 @@ class home extends Component{
     }
     render()
     {
-        if(this.state.times===3)
-            return (<Redirect to='/questionOne'/>);
-        return(
-            <Outline>
-                <Bubble className='top'></Bubble>
-                <Bubble className='left'></Bubble>
-                <Bubble className='bottom'></Bubble>
-                <Title>
-                    FutureApp
-                    <p className='test'>——大测试——</p>
-                </Title>
-                <Button id="button" className={this.state.times===0?'':this.state.times===1?'button one':'button two'} onClick={this.move}>点击进入</Button>
-            </Outline>
-        )
-    }
+
+            if(this.state.times===3)
+                return (<Redirect to='/questionOne'/>);
+            return(
+                <Outline>
+                    <Bubble className='top'></Bubble>
+                    <Bubble className='left'></Bubble>
+                    <Bubble className='bottom'></Bubble>
+                    <Title>
+                        FutureApp
+                        <p className='test'>——大测试——</p>
+                    </Title>
+                    <Button id="button" className={this.state.times===0?'':this.state.times===1?'button one':'button two'} onClick={this.move}>点击进入</Button>
+                </Outline>
+            )
+        }
+
     // move(loaction)
     // {
     //     window.onload = function () {
